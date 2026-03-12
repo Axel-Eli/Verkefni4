@@ -1,10 +1,17 @@
 
 export type NewsAuthor = {
+  id: number;
   name: string;
+  email?: string;
 };
 
 export type NewsItemResult = {
   data: Array<NewsItem>;
+  paging?: {
+    limit: number;
+    offset: number;
+    total: number;
+  };
 };
 
 export type NewsItem = {
@@ -12,8 +19,19 @@ export type NewsItem = {
   title: string;
   slug: string;
   intro: string;
-  author: NewsAuthor;
+  author: NewsAuthor | null;
   text?: string;
+  puplished?: string;
+  authorId?: number; 
+};
+
+export type authorsResult = {
+  data: Array<NewsAuthor>;
+  paging?: {
+    limit: number;
+    offset: number;
+    total: number;
+  };
 };
 
 export type ApiError = {
@@ -34,5 +52,7 @@ export type ApiResult<T> =
       status?: number;
       error: ApiError;
     };
+
+
 
 export type NewsState = "initial" | "loading" | "error" | "data" | "empty";

@@ -142,6 +142,10 @@ export async function getNewsItem(slug: string): Promise<ApiResult<NewsItem>> {
   return fetchFromApi(`/news/${slug}`);
 }
 
+export async function getAuthors(): Promise<ApiResult<authorsResult>> {
+  return fetchFromApi("/authors");
+}
+
 export async function createNewsItem(body: unknown): Promise<ApiResult<NewsItem>> {
   return fetchFromApi("/news", {
     method: "POST",
