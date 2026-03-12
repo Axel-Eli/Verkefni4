@@ -70,7 +70,9 @@ export function NewsPage() {
 
       {newsState === "data" && news && (
         <article className="news-card news-card--full">
-          <p className="news-card__author">Eftir {news.author.name}</p>
+          <p className="news-card__author">
+            Eftir {news.author?.name ?? "Óþekktur höfundur"}
+          </p>
           <h1 className="news-card__title">{news.title}</h1>
           <p className="news-card__intro">{news.intro}</p>
           <div className="news-card__body">

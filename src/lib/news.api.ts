@@ -1,4 +1,4 @@
-import type { ApiResult, NewsItem, NewsItemResult } from "../types";
+import type { ApiResult, NewsItem, NewsItemResult, authorsResult } from "../types";
 
 const API_URL = import.meta.env.VITE_API_URL || "";
 

@@ -6,10 +6,12 @@ type Props = {
 };
 
 export function NewsListItem({ item }: Props) {
+  const authorName = item.author?.name ?? "Óþekktur höfundur";
+
   return (
     <li className="news-card">
       <article>
-        <p className="news-card__author">Eftir {item.author.name}</p>
+        <p className="news-card__author">Eftir {authorName}</p>
         <h2 className="news-card__title">
           <Link to={`/frettir/${item.slug}`}>{item.title}</Link>
         </h2>
