@@ -1,42 +1,114 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  width: 100%;
+}
+
+.page {
+  display: grid;
+  gap: 2rem;
+}
+
+.page-header {
+  display: grid;
+  gap: 1rem;
   padding: 2rem;
-  text-align: center;
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, #fff7ed, #ffedd5);
+  border: 1px solid #fdba74;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.page-header__eyebrow {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #9a3412;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.page-header__intro {
+  margin: 0;
+  max-width: 42rem;
+  color: #7c2d12;
+}
+
+.page-header__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 0.85rem 1.2rem;
+  border-radius: 999px;
+  background: #9a3412;
+  color: #fff7ed;
+}
+
+.news-list {
+  display: grid;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.news-card {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.news-card__author {
+  margin: 0 0 0.5rem;
+  color: #6b7280;
+}
+
+.news-card__title {
+  margin: 0 0 0.75rem;
+  font-size: 1.5rem;
+}
+
+.news-card__intro {
+  margin: 0 0 1rem;
+  color: #374151;
+}
+
+.news-card__link {
+  color: #9a3412;
+}
+
+.news-card--full {
+  padding: 2rem;
+}
+
+.news-card__body {
+  max-width: 65ch;
+  color: #1f2937;
+}
+
+.news-card__body p {
+  margin-bottom: 0;
+  white-space: pre-line;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.pagination__status {
+  margin: 0;
+  color: #4b5563;
+}
+
+@media (max-width: 640px) {
+  .page-header {
+    padding: 1.5rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .pagination {
+    flex-direction: column;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }

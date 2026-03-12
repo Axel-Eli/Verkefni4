@@ -1,5 +1,5 @@
-import { Link } from "react-router";
 import type { NewsItem } from "../../types";
+import { NewsListItem } from "../NewsListItem/NewsListItem";
 
 type Props = {
   news: NewsItem[];
@@ -7,9 +7,9 @@ type Props = {
 
 export function NewsList({ news }: Props) {
   return (
-    <ul>
-      {news.map((i) => (
-        <li><Link to={`/frettir/${i.slug}`}>{i.title} eftir {i.author.name}</Link></li>
+    <ul className="news-list">
+      {news.map((item) => (
+        <NewsListItem key={item.id} item={item} />
       ))}
     </ul>
   );
